@@ -21,10 +21,9 @@ private:
 	string file;
 public:
 	CSVFile(string file);
-	~CSVFile() { f.close(); }
 public:
 	vector<string> read();
 	bool write(ios_base::openmode mode, vector<string> records);
-	void addFirstLineTo(vector<string> &records);
+	void addFirstLineOfFileTo(vector<string> &records);
 };
 

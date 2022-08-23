@@ -128,9 +128,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Auth.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Account.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\users\sample.csv" />
@@ -139,9 +140,10 @@
     <None Include="requirements.pdf" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Auth.h" />
+    <ClInclude Include="Business.h" />
     <ClInclude Include="File.h" />
     <ClInclude Include="Lib.h" />
+    <ClInclude Include="Account.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

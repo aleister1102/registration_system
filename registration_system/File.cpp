@@ -36,7 +36,7 @@ vector<string> CSVFile::read()
 bool CSVFile::write(ios_base::openmode mode, vector<string> records)
 {
 	if (FileMode::out == mode)
-		addFirstLineTo(records);
+		addFirstLineOfFileTo(records);
 	
 	f.open(file, mode);
 
@@ -54,7 +54,7 @@ bool CSVFile::write(ios_base::openmode mode, vector<string> records)
 	return true;
 }
 
-void CSVFile::addFirstLineTo(vector<string> &records) {
+void CSVFile::addFirstLineOfFileTo(vector<string> &records) {
 	f.open(file, FileMode::in);
 
 	if (f.is_open()) {
