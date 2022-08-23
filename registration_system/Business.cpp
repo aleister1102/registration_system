@@ -1,4 +1,5 @@
 #include "Business.h"
+#include "Account.h"
 
 void menu() {
 	string option;
@@ -54,7 +55,10 @@ void login() {
 
 	account = createAccount(option, username, password);
 
-	account->validate();
+	if (account->validate())
+		cout << "Logged in" << endl;
+	else
+		cout << "Username or password is incorrect" << endl;
 }
 
 tuple<string, string> getLoginInput() {
@@ -73,11 +77,26 @@ Account* createAccount(string option, string username, string password) {
 		return new Staff(username, password);
 	else if (option == "2")
 		return new Student(username, password);
-	else
-		return nullptr;
+	return nullptr;
 }
 
 void quit() {
 	cout << "See you again!" << endl;
 	exit(0);
+}
+
+vector<string> split(string str, string del = " ")
+{
+	vector<string> result;
+
+	size_t start = 0;
+	size_t end = 0;
+
+	while (end != -1) {
+		end = str.find(del, start);
+		result.push_back(str.substr(start, end - start));
+		start = end + del.size();
+	}
+
+	return result;
 }

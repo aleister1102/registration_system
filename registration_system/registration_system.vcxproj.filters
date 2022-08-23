@@ -21,7 +21,7 @@
     <ClCompile Include="File.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
+    <ClCompile Include="Business.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Account.cpp">
@@ -32,13 +32,10 @@
     <None Include="requirements.pdf">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="data\users\staff.csv">
+    <None Include="data\accounts\staff.csv">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="data\users\student.csv">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="data\users\sample.csv">
+    <None Include="data\accounts\student.csv">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

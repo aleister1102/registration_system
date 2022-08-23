@@ -21,8 +21,7 @@ vector<string> CSVFile::read()
 		{
 			string line;
 			getline(f, line);
-			cout << line << endl;
-			records.push_back(line);
+			if (line != "") records.push_back(line);
 		}
 	}
 	else {
@@ -37,7 +36,7 @@ bool CSVFile::write(ios_base::openmode mode, vector<string> records)
 {
 	if (FileMode::out == mode)
 		addFirstLineOfFileTo(records);
-	
+
 	f.open(file, mode);
 
 	if (f.is_open()) {
@@ -54,7 +53,7 @@ bool CSVFile::write(ios_base::openmode mode, vector<string> records)
 	return true;
 }
 
-void CSVFile::addFirstLineOfFileTo(vector<string> &records) {
+void CSVFile::addFirstLineOfFileTo(vector<string>& records) {
 	f.open(file, FileMode::in);
 
 	if (f.is_open()) {

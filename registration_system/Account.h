@@ -1,6 +1,14 @@
 #pragma once
 #include "Lib.h"
+#include "File.h"
+#include "Business.h"
 using namespace std;
+
+class AccountPath {
+public:
+	inline static string staff = "data/accounts/staff.csv";
+	inline static string student = "data/accounts/student.csv";
+};
 
 class Account
 {
@@ -10,10 +18,11 @@ protected:
 
 public:
 	Account(string, string);
+	bool isInside(vector<string> accounts);
 
 public:
 	virtual string classname();
-	virtual void validate();
+	virtual bool validate();
 };
 
 class Staff : public Account {
@@ -23,8 +32,7 @@ public:
 
 public:
 	string classname();
-	void validate();
-
+	bool validate();
 };
 
 class Student : public Account {
@@ -33,5 +41,5 @@ public:
 		Account(username, password) {}
 public:
 	string classname();
-	void validate();
+	bool validate();
 };

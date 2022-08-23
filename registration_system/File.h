@@ -4,9 +4,9 @@ using namespace std;
 
 class FileMode {
 public:
-	static const ios_base::openmode in = ios_base::in;
-	static const ios_base::openmode out = ios_base::out;
-	static const ios_base::openmode app = ios_base::app;
+	inline static ios_base::openmode in = ios_base::in;
+	inline static ios_base::openmode out = ios_base::out;
+	inline static ios_base::openmode app = ios_base::app;
 };
 
 class File {
@@ -24,6 +24,5 @@ public:
 public:
 	vector<string> read();
 	bool write(ios_base::openmode mode, vector<string> records);
-	void addFirstLineOfFileTo(vector<string> &records);
+	void addFirstLineOfFileTo(vector<string>& records);
 };
-
